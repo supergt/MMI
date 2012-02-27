@@ -1,0 +1,31 @@
+<table class="itemsTable">
+<thead>
+<tr class="itemsTableHead">
+	<th class="ithDelete"><b>Delete</b></th>
+	<th class="ithName"><b>Name</b></th>
+	<th class="ithPercentage"><b>Percentage</b></th>
+</tr>
+</thead>
+<tbody>
+
+<% i = 0 %>
+<% for @allocator in @allocators %>
+	<% if i % 2 == 0 %>
+		<tr class="itemRow even">
+	<% else %>
+		<tr class="itemRow odd">
+	<% end %>
+	<th class="itDelete">
+	<%= link_to (@allocator, :remote => true, :confirm => 'Are you sure?', :method => :delete) do %>
+		<button class="ui-state-default ui-corner-all" title=".ui-icon-trash">
+		<span class="ui-icon ui-icon-trash"></span>
+		</button>
+	<% end %>
+	</th>
+	<th class="itName"><%= @allocator.account.name %></th>
+	<th class="itPercentage"><%= @allocator.percentage %>%</th>
+	</tr>
+	<% i += 1 %>
+<% end %>
+</tbody>
+</table>

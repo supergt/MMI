@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  donor_id: 1
+  recipient_id: 1
+  value: 1.5
+
+two:
+  donor_id: 1
+  recipient_id: 1
+  value: 1.5

@@ -1,0 +1,32 @@
+<%= form_for(@transfer, :remote => true) do |f| %>
+  <% if @transfer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transfer.errors.count, "error") %> prohibited this transfer from being saved:</h2>
+
+      <ul>
+      <% @transfer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    From
+    <%= collection_select (:transfer, :donor_id, Account.all, :id, :name)  %>
+  </div>
+
+  <div class="field">
+    To
+    <%= collection_select (:transfer, :recipient_id, Account.all, :id, :name)  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit :class => 'submitButton' %>
+  </div>
+<% end %>

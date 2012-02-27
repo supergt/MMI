@@ -1,0 +1,10 @@
+<b>Total: <%= number_to_currency(@earnings - @expenses) %></b>
+	<div class="banks">
+		<% for bank in @banks %>
+		<% totalValue = 0 %>
+		<% for account in bank.accounts %>
+			<% totalValue += @earnings * account.allocator.percentage / 100 - account.expenses.sum('value') %>
+		<% end %>
+		<%= bank.name %> : <%= totalValue %><br />
+		<% end %>
+	</div>

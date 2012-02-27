@@ -1,0 +1,63 @@
+<div class="page">
+
+<!-- drop down menu -->
+<div class='topMenuMain'>
+<ul id="menu1"> 
+
+<li><a href="#" class='topMenu'>Banks</a>
+	<ul>
+		<li><%= link_to "Create new bank", new_bank_path, :class=> 'topMenuSubItem', :remote => true %></li>
+        <li><%= link_to "Show banks", banks_path, :class=> 'topMenuSubItem', :remote => true %></li>
+	</ul>
+</li>
+<li><a href="#" class='topMenu'>Accounts</a>
+	<ul>
+		<li><%= link_to "Create new account", new_account_path, :class=> 'topMenuSubItem', :remote => true %></li>
+		<li><%= link_to "View accounts", accounts_path, :class=> 'topMenuSubItem', :remote => true %></li>
+	</ul>
+</li>
+<li><a href="#" class='topMenu'>Allocations</a>
+	<ul>
+		<li><%= link_to "Create new allocation", new_allocator_path, :class=> 'topMenuSubItem', :remote => true %></li>
+        <li><%= link_to "Show allocations", allocators_path, :class=> 'topMenuSubItem', :remote => true %></li>
+	</ul>
+</li>
+<li><a href="#" class='topMenu'>Transfers</a>
+	<ul>
+		<li><%= link_to "Create new transfer", new_transfer_path, :class=> 'topMenuSubItem', :remote => true %></li>
+		<li><%= link_to "Show transfers", transfers_path, :class=> 'topMenuSubItem', :remote => true %></li>
+	</ul>
+</li>
+<li><a href="#" class='topMenu'>Earnings</a>
+	<ul>
+		<li><%= link_to "Create new earning", new_earning_path, :class=> 'topMenuSubItem', :remote => true %></li>
+		<li><%= link_to "Show earnings", earnings_path, :class=> 'topMenuSubItem', :remote => true %></li>
+	</ul>
+</li>
+<li><a href="#" class='topMenu'>Expenses</a>
+	<ul>
+		<li><%= link_to "Create new expense", new_expense_path, :class=> 'topMenuSubItem', :remote => true %></li>
+		<li><%= link_to "Show expenses", expenses_path, :class=> 'topMenuSubItem', :remote => true %></li>
+	</ul>
+</li>
+
+</ul>
+</div>
+
+<div class="accountsTable">
+<%= render :partial => 'accounts' %>
+</div>
+
+<div class="total">
+<%= render :partial => 'banks' %>
+</div>
+
+<div class="warnings ui-state-error">
+</div>
+
+
+</div>
+
+<div id="dialog">
+HELLO!
+</div>

@@ -1,0 +1,26 @@
+<%= form_for(@allocator) do |f| %>
+  <% if @allocator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@allocator.errors.count, "error") %> prohibited this allocator from being saved:</h2>
+
+      <ul>
+      <% @allocator.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= collection_select (:allocator, :account_id, Account.all, :id, :name)  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :percentage %><br />
+    <%= f.text_field :percentage %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit :class => 'submitButton' %>
+  </div>
+<% end %>

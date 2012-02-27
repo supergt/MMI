@@ -1,0 +1,47 @@
+<table class="itemsTable">
+<thead>
+<tr class="itemsTableHead">
+	<th class="ithDelete"><b>Delete</b></th>
+	<th class="ithName"><b><%= sortable "name" %></b></th>
+	<th class="ithDescription"><b>Description</b></th>
+	<th class="ithValue"><b><%= sortable "value" %></b></th>
+	<th class="ithDate"><b><%= sortable "date" %></b></th>
+</tr>
+</thead>
+<tbody>
+
+<% i = 0 %>
+<% if @allocator != nil %>
+	<% allocation = @allocator.percentage / 100.0 %>
+<% else %>
+	<% allocation = 1 %>
+<% end %>
+
+<% for @earning in @earnings %>
+	<% if i % 2 == 0 %>
+		<tr class="itemRow even">
+	<% else %>
+		<tr class="itemRow odd">
+	<% end %>
+	<th class="itDelete">
+	<%= link_to (@earning, :remote => true, :confirm => 'Are you sure?', :method => :delete) do %>
+		<button class="ui-state-default ui-corner-all" title=".ui-icon-trash">
+		<span class="ui-icon ui-icon-trash"></span>
+		</button>
+	<% end %>
+	</th>
+	<th class="itName"><%= @earning.name %></th>
+	<th class="itDescription"><%= @earning.description %></th>
+	<th class="itValue"><%= number_to_currency(@earning.value * allocation) %></th>
+	<th class="itDate">
+	<% if @earning.date != nil %>
+		<%= @earning.date.strftime("%m/%d/%Y") %>
+	<% else %>
+		<%= @earning.created_at.strftime("%m/%d/%Y") %>
+	<% end %>
+	</th>
+	</tr>
+	<% i += 1 %>
+<% end %>
+</tbody>
+</table>

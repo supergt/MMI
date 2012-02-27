@@ -1,0 +1,7 @@
+$("#dialog").html('<%= escape_javascript( render(:partial => "form") ) %>')
+	.dialog('option', 'title', 'Create New Earning')
+	.dialog('open');
+	
+$('.submitButton').button();
+$('#earning_date').datepicker();
+

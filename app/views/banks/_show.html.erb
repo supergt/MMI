@@ -1,0 +1,40 @@
+<% for @bank in @banks %>
+
+<h2><%= @bank.name %></h2>
+
+<table class="itemsTable">
+<thead>
+<tr class="itemsTableHead">
+	<th class="ithDelete"><b>Delete</b></th>
+	<th class="ithName"><b>Name</b></th>
+	<th class="ithTotal"><b>Total</b></th>
+</tr>
+</thead>
+<tbody>
+<% i = 0 %>
+<% total = 0 %>
+<% for @account in @bank.accounts %>
+	<% if i % 2 == 0 %>
+		<tr class="itemRow even">
+	<% else %>
+		<tr class="itemRow odd">
+	<% end %>
+	<th class="itDelete">
+		<button class="ui-state-default ui-corner-all" title=".ui-icon-trash">
+		<span class="ui-icon ui-icon-trash"></span>
+		</button>
+	</th>
+	<th class="itName"><%= @account.name %></th>
+
+	<% partial = @earnings*@account.allocator.percentage / 100 - @account.expenses.sum('value') %>
+	<th class="itTotal"><%= number_to_currency(partial) %></th>
+	<% total += partial %>
+	</tr>
+	<% i += 1 %>
+<% end %>
+</tbody>
+</table>
+
+Total: <%= number_to_currency(total) %>
+
+<% end %>

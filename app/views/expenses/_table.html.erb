@@ -1,0 +1,36 @@
+<table class="itemsTable">
+<thead>
+<tr class="itemsTableHead">
+	<th class="ithDelete"><b>Delete</b></th>
+	<th class="ithName"><%= sortable "name" %></th>
+	<th class="ithDescription"><b>Description</b></th>
+	<th class="ithValue"><%= sortable "value" %></th>
+	<th class="ithAccount"><b>Account</b></th>
+	<th class="ithDate"><%= sortable "date" %></th>
+</tr>
+</thead>
+<tbody>
+<% i = 0 %>
+<% for @expense in @expenses %>
+	<% if i % 2 == 0 %>
+		<tr class="itemRow even">
+	<% else %>
+		<tr class="itemRow odd">
+	<% end %>
+	<th class="itDelete">
+	<%= link_to (@expense, :remote => true, :confirm => 'Are you sure?', :method => :delete) do %>
+		<button class="ui-state-default ui-corner-all" title=".ui-icon-trash">
+		<span class="ui-icon ui-icon-trash"></span>
+		</button>
+	<% end %>
+	</th>
+	<th class="itName"><%= @expense.name %></th>
+	<th class="itDescription"><%= @expense.description %></th>
+	<th class="itValue"><%= number_to_currency(@expense.value) %></th>
+	<th class="itAccount"><%= @expense.account.name %></th>
+	<th class="itDate"><%= @expense.created_at.strftime("%m/%d/%Y") %></th>
+	</tr>
+	<% i += 1 %>
+<% end %>
+</tbody>
+</table>

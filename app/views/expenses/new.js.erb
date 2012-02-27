@@ -1,0 +1,6 @@
+$("#dialog").html('<%= escape_javascript( render(:partial => "form") ) %>')
+	.dialog('option', 'title', 'Create New Expense')
+	.dialog('open');
+
+$('.submitButton').button();
+$('#expense_date').datepicker();

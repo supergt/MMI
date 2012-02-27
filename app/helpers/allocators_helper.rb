@@ -1,0 +1,2 @@
+module AllocatorsHelper
+end

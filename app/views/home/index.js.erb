@@ -1,0 +1,13 @@
+$('.accountsTable').html('<%= escape_javascript(render :partial => "home/accounts") %>');
+$('.total').html('<%= escape_javascript(render :partial => "home/banks") %>');
+totalAllocations = <%= @totalAllocations %>;
+if (totalAllocations > 100) {
+	$('.warnings').html('Your allocations are over 100%!');
+	$('.warnings').show();
+} else if (totalAllocations < 100) {
+	$('.warnings').html('Your allocations are below 100%!');
+	$('.warnings').show();
+} else {
+	$('.warnings').html('');
+	$('.warnings').hide();
+}

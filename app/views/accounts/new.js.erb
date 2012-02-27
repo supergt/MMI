@@ -1,0 +1,5 @@
+$("#dialog").html('<%= escape_javascript( render(:partial => "form") ) %>')
+	.dialog('option', 'title', 'Create New Account')
+	.dialog('open');
+
+$('.submitButton').button();

@@ -1,0 +1,5 @@
+<% for @account in @accounts %>
+	<%= @account.name %>
+	<%= @account.allocator.percentage %>
+	(<%= link_to 'delete', @account, :remote => true, :confirm => 'Are you sure?', :method => :delete %>) <br />
+<% end %>

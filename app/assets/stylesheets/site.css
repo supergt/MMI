@@ -1,0 +1,218 @@
+body {
+    background: url("/assets/hawaii-small.png") no-repeat fixed right bottom #FFFFFF;
+}
+.page {
+    width: 1000px;
+}
+.accountsTable {
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+}
+.account {
+    border: 1px solid #888;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+    height: 300px;
+    margin-right: 1.3%;
+    width: 12%;
+    box-shadow: 5px 5px 5px #888;
+}
+.account:hover {
+	box-shadow: 5px 5px 5px #000;
+	border: 1px solid #000;
+}
+
+a:hover {
+}
+
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+.accountEdit {
+}
+
+.accountName {
+    float: left;
+    font-size: 1.5em;
+    height: 50px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+.accountPhoto {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+.accountPhoto img {
+    width: 100%;
+}
+.percentage {
+    font-size: 1.2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+    width: 90%;
+    margin-top: 20px;
+}
+.runningTotal {
+    font-size: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: bottom;
+    width: 90%;
+}
+.total {
+    font-size: 2em;
+    position: absolute;
+    text-align: left;
+    top: 370px;
+    left: 25px;
+    width: 84%;
+}
+.arrowDown {
+	position: absolute;
+	top: 380px;
+	left: 5px;
+}
+.banks {
+	display: none;
+	font-size: 0.7em;
+}
+
+.bottom {
+    font-size: 0.8em !important;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 85%;
+}
+.bottomLinks {
+	border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+.topMenuMain {
+	left: 15px;
+    position: absolute;
+    top: 0;
+}
+.topMenu{
+	border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 5px !important;
+}
+.topMenuSubItem {
+	border-radius: 0px !important;
+}
+.dialog {
+	display: none;
+}
+
+ul#menu1 {}
+ul#menu2 { clear:both; width:160px;, margin-top:10px; }
+li.potato-menu-item {
+    width:160px;
+    font-size:12px;
+}
+li.potato-menu-item a {
+    padding:5px 20px 5px 12px;
+}
+li.potato-menu-hover {
+}
+li.potato-menu-has-vertical > a {
+}
+li.potato-menu-has-holizontal > a {
+}
+li.potato-menu-item ul {
+    border-top:1px solid #444;
+    border-left:1px solid #444;
+}
+
+.itemsTable {
+}
+.itemsTableHead {
+  background-color:#FFBB00;
+}
+.itemRow {
+  font-size:14px;
+  text-align:left;
+}
+.itemRow.even {
+}
+.itemRow.odd {
+  background-color:#FFDD66;
+}
+.ithDelete {
+  width:60px;
+}
+.ithName {
+  width:150px;
+  text-align: left;
+}
+.ithDescription {
+  width:250px;
+  text-align: left;
+}
+.ithValue {
+  width:80px;
+}
+.ithDate {
+  width:100px;
+}
+.itDelete {
+  text-align:center;
+  width:60px;
+}
+.itName {
+  width:150px;
+}
+.itDescription {
+  width:250px;
+}
+.itValue {
+  text-align:right;
+  width:80px;
+}
+.itDate {
+  text-align:center;
+  width:100px;
+}
+
+.showExpenses {
+	margin-bottom: 50px;
+}
+.showEarnings {}
+.field {
+	margin-bottom: 15px;
+}
+
+.negative {
+  color: red;
+}
+
+.warnings {
+  color:red;
+  font-size:1.2em;
+  left:380px;
+  padding-bottom:5px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:5px;
+  position:absolute;
+  top:370px;
+}
