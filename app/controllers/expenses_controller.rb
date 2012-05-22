@@ -3,9 +3,8 @@ class ExpensesController < ApplicationController
   helper_method :sort_column, :sort_direction
 	
   def index
-    
-		@expenses = Expense.find(:all, :include => [:account], :order => sort_column + " " + sort_direction)
 
+    @expenses = Expense.paginate(:per_page => 10, :page => params[:expenses_page]).find(:all, :include => [:account], :order => sort_column + " " + sort_direction)
     respond_to do |format|
       format.js
     end
@@ -25,7 +24,9 @@ class ExpensesController < ApplicationController
     	@expense = Expense.find(params[:id])
     	@expense.destroy
     	
-    	redirect_to :action => 'index'
+  	respond_to do |format|
+      format.js
+    end
  	end
 
   private

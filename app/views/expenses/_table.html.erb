@@ -28,9 +28,17 @@
 	<th class="itDescription"><%= @expense.description %></th>
 	<th class="itValue"><%= number_to_currency(@expense.value) %></th>
 	<th class="itAccount"><%= @expense.account.name %></th>
-	<th class="itDate"><%= @expense.created_at.strftime("%m/%d/%Y") %></th>
+	<th class="itDate">
+	<% if @expense.date != nil %>
+		<%= @expense.date.strftime("%m/%d/%Y") %>
+	<% else %>
+		<%= @expense.created_at.strftime("%m/%d/%Y") %>
+	<% end %>
+	</th>
 	</tr>
 	<% i += 1 %>
 <% end %>
 </tbody>
 </table>
+
+<%= will_paginate @expenses, :param_name => 'expenses_page' %>

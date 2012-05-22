@@ -3,7 +3,7 @@ class EarningsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
 	def index
-		@earnings = Earning.order(sort_column + " " + sort_direction)
+		@earnings = Earning.order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:earnings_page])
 
     respond_to do |format|
       format.js
@@ -23,7 +23,9 @@ class EarningsController < ApplicationController
     	@earning = Earning.find(params[:id])
     	@earning.destroy
     	
-    	redirect_to :action => 'index'
+    	respond_to do |format|
+        format.js
+      end
   end
 
   private

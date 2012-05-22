@@ -2,12 +2,30 @@
 <%= @account.name %>
 </div>
 
-<div class="showExpenses">
-Expenses<br />
-<%= render :partial => 'expenses/show' %>
+
+<!--<div id="tabs" class="accountTabs">
+	<ul>
+		<li><a href="#tabs-1">Expenses</a></li>
+		<li><a href="#tabs-2">Earnings</a></li>
+	</ul>
+	<div id="tabs-1">
+		<div class="showExpenses">
+			<%= render :partial => 'expenses/show' %>
+		</div>
+	</div>
+	<div id="tabs-2">
+		<div class="showEarnings">
+			<%= render :partial => 'earnings/show' %>
+		</div>
+	</div>
+</div>-->
+
+<div class="itemsExpenses">
+	Expenses <br />
+	<%= render :partial => 'expenses/show' %>
 </div>
 
-<div class="showEarnings">
-Earnings <br />
-<%= render :partial => 'earnings/show' %>
+<div class="itemsEarnings">
+	Earnings <br />
+	<%= render :partial => 'earnings/show' %>
 </div>

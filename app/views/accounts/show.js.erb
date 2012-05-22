@@ -1,3 +1,4 @@
 $("#dialog").html('<%= escape_javascript( render(:partial => "showAccount") ) %>')
 	.dialog('option', 'title', 'Account Info')
 	.dialog('open');
+$('#tabs').tabs();

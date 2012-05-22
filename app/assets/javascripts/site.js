@@ -17,26 +17,14 @@ $(document).ready(function () {
 		function(){ $(this).addClass('ui-state-hover'); }, 
 		function(){ $(this).removeClass('ui-state-hover'); }
 	);
-
-
-	$('.bankIcon.ui-icon-minus').click(
-		function() {
-			$(this).addClass('ui-icon-plus');
-			$(this).removeClass('ui-icon-minus');
-			$('.banks').hide();
-		}
-	);
-	
-	$('.bankIcon.ui-icon-plus').click(
-		function() {
-			$(this).addClass('ui-icon-minus');
-			$(this).removeClass('ui-icon-plus');
-			$('.banks').show();
-		}
-	);
 	
 	//Top Menu
 	$('#menu1').ptMenu();
 	$('.topMenuMain').buttonset();
+
+	$('.pagination a').live('click', function () {
+      	$.getScript(this.href);
+      	return false;
+    });
 	
 });
