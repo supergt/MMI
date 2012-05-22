@@ -1,5 +1,5 @@
 if (!$('#dialog').dialog('isOpen')) {
-	$('#dialog').html("<%= escape_javascript(render :partial => 'show') %>")
+	$('#dialog').html("<%= escape_javascript(render 'show') %>")
 		.dialog('option', 'title', 'All Earnings')
 		.dialog('open');
 
@@ -12,5 +12,5 @@ if (!$('#dialog').dialog('isOpen')) {
 	    return false;
 	});
 } else {
-	$('.items').html("<%= escape_javascript(render :partial => 'table') %>")	
+	$('.items').html("<%= escape_javascript(render 'table') %>")	
 }

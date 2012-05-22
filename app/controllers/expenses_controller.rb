@@ -3,6 +3,7 @@ class ExpensesController < ApplicationController
   helper_method :sort_column, :sort_direction
 	
   def index
+    
 		@expenses = Expense.find(:all, :include => [:account], :order => sort_column + " " + sort_direction)
 
     respond_to do |format|
