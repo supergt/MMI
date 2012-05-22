@@ -8,8 +8,8 @@ class AccountsController < ApplicationController
 	
   def show
   	@account = Account.find(params[:id])
-  	@expenses = @account.expenses.paginate(:per_page => 5, :page => params[:expenses_page]).order(sort_column + " " + sort_direction)
-  	@earnings = Earning.paginate(:per_page => 5, :page => params[:earnings_page]).order(sort_column + " " + sort_direction)
+  	@expenses = @account.expenses.order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:expenses_page])
+  	@earnings = Earning.order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:earnings_page])
   	@allocator = @account.allocator
   end
 	

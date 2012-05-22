@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
 	
   def index
 
-    @expenses = Expense.paginate(:per_page => 10, :page => params[:expenses_page]).find(:all, :include => [:account], :order => sort_column + " " + sort_direction)
+    @expenses = Expense.find(:all, :include => [:account], :order => sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:expenses_page])
     respond_to do |format|
       format.js
     end
