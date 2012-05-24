@@ -1,6 +1,6 @@
 <% for account in @accounts %>
 	<div class='account'>
-	<%= link_to (account, :remote => true) do %>
+	<%= link_to(account, :remote => true) do %>
 	<div class="accountName"><%= account.name %></div>
 	<div class="accountPhoto"><%= image_tag account.name+".png" %></div>
 	<div class="runningTotal">

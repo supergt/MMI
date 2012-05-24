@@ -4,6 +4,8 @@ class ExpensesController < ApplicationController
 	
   def index
 
+    puts 'Index...'
+
     num_per_page = 5
 
     @expenses = Expense.find(:all, :include => [:account], :order => sort_column + " " + sort_direction).paginate(:per_page => num_per_page, :page => params[:expenses_page])
@@ -19,15 +21,17 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(params[:expense])
 
-  	@expense.save
+  	if @expense.save
+      flash[:notice] = "Successfully created expense!"
+    else
+      flash[:error] = "Error creating expense."
+    end
   end
 	
 	def destroy
     @expense = Expense.find(params[:id])
     @expense.destroy
-
-    # redirect to index action
-  	index
+    index
  	end
 
   private

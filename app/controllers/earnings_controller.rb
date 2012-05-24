@@ -24,8 +24,6 @@ class EarningsController < ApplicationController
 	def destroy
     @earning = Earning.find(params[:id])
     @earning.destroy
-    
-    # redirect to index action
     index
   end
 
