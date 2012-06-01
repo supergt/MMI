@@ -11,7 +11,8 @@
   </div>
   
   <div class="field">
-    <%= collection_select (:account, :bank_id, Bank.all, :id, :name)  %>
+    Bank
+    <%= f.collection_select :bank_id, Bank.all, :id, :name  %>
   </div>
 
   <div class="field">
@@ -20,7 +21,7 @@
   </div>
 
   <p>
-    Image: 
+    Image
     <%= f.file_field :image %>
   </p>
   
