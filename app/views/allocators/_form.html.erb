@@ -12,7 +12,7 @@
   <% end %>
   
   <div class="field">
-    <%= collection_select (:allocator, :account_id, Account.all, :id, :name)  %>
+    <%= collection_select (:allocator, :account_id, @accounts, :id, :name)  %>
   </div>
 
   <div class="field">

@@ -1,15 +1,9 @@
 <%= form_for(@account, :remote => true) do |f| %>
-  <% if @account.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h2>
-
-      <ul>
-      <% @account.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  
+  <div id="error_explanation" title="Error Saving Account" style="font-size:0.8em; display:none;">
+    Error saving account.<br />
+    You need to fill out the <b>name</b> and <b>percentage</b>.
+  </div>
 
   <div class="field">
     <%= f.label :name %><br />
@@ -20,11 +14,15 @@
     <%= collection_select (:account, :bank_id, Bank.all, :id, :name)  %>
   </div>
 
-
   <div class="field">
     Percentage<br />
-    <%= text_field_tag "percentage" %>
+    <%= number_field_tag "percentage", @account.allocator.percentage %>
   </div>
+
+  <p>
+    Image: 
+    <%= f.file_field :image %>
+  </p>
   
   
   <div class="actions">

@@ -18,6 +18,6 @@ class TransfersController < ApplicationController
     	@transfer = Transfer.find(params[:id])
     	@transfer.destroy
     	
-    	redirect_to :action => 'index'
+    	index
   	end
 end

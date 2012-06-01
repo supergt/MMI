@@ -2,13 +2,13 @@
 	<div class='account'>
 	<%= link_to(account, :remote => true) do %>
 	<div class="accountName"><%= account.name %></div>
-	<div class="accountPhoto"><%= image_tag account.name+".png" %></div>
+	<div class="accountPhoto"><%= image_tag account.image_url.to_s %></div>
 	<div class="runningTotal">
 		<% runningTotal = @earnings * account.allocator.percentage / 100 %>
 		<% runningTotal -= account.expenses.sum('value') %>
 		<% runningTotal -= account.out_transfers.sum('value') %>
 		<% runningTotal += account.in_transfers.sum('value') %>
-		<% if runningTotal > 0 %>
+		<% if runningTotal >= 0 %>
 			<%= number_to_currency(runningTotal) %>
 		<% else %>
 			<div class='negative'>(<%= number_to_currency(runningTotal * -1) %>)</div>

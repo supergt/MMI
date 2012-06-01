@@ -15,19 +15,33 @@ class AccountsController < ApplicationController
 	
   def new
     @account = Account.new
-    @allocator = Allocator.new
+    @allocator = @account.build_allocator
   end
 
   def create
     @account = Account.new(params[:account])
-    @account.save
     @allocator = @account.build_allocator(:percentage => params[:percentage])
-    @allocator.save
+
+    if params[:percentage] != ""
+      if @account.save
+        @allocator.save
+      end
+    else
+      @account.errors.add("Invalid percentage")
+    end
+
+    respond_to do |format|
+      format.js
+    end
   end
   
   def edit
   	@account = Account.find(params[:id])
-    @allocator = @account.allocator
+
+    respond_to do |format|
+      format.js
+    end
+
   end
   
   def update

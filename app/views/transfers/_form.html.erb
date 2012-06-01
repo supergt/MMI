@@ -1,15 +1,9 @@
 <%= form_for(@transfer, :remote => true) do |f| %>
-  <% if @transfer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@transfer.errors.count, "error") %> prohibited this transfer from being saved:</h2>
-
-      <ul>
-      <% @transfer.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  
+  <div id="error_explanation" title="Error Saving Transfer" style="font-size:0.8em; display:none;">
+    Error saving Transfer.<br />
+    You need to fill out the <b>value</b>.
+  </div>
   
   <div class="field">
     From

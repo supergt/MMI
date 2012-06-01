@@ -1,15 +1,9 @@
-<%= form_for(@bank) do |f| %>
-  <% if @bank.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bank.errors.count, "error") %> prohibited this bank from being saved:</h2>
-
-      <ul>
-      <% @bank.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for(@bank, :remote => :true) do |f| %>
+  
+  <div id="error_explanation" title="Error Saving Bank" style="font-size:0.8em; display:none;">
+    Error saving bank.<br />
+    You need to fill out the <b>name</b>.
+  </div>
 
   <div class="field">
     <%= f.label :name %><br />

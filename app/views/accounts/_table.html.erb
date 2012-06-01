@@ -1,0 +1,39 @@
+<table class="itemsTable">
+<thead>
+<tr class="itemsTableHead">
+	<th class="ithDelete"><b>Delete</b></th>
+	<th class="ithName"><b>Name</b></th>
+	<th class="ithPercentage"><b>Percentage</b></th>
+	<th class="ithEdit"><b>Edit</b></th>
+</tr>
+</thead>
+<tbody>
+
+<% i = 0 %>
+<% for @account in @accounts %>
+	<% if i % 2 == 0 %>
+		<tr class="itemRow even">
+	<% else %>
+		<tr class="itemRow odd">
+	<% end %>
+	<th class="itDelete">
+	<%= link_to (@account, :remote => true, :confirm => 'Are you sure?', :method => :delete) do %>
+		<button class="ui-state-default ui-corner-all" title=".ui-icon-trash">
+		<span class="ui-icon ui-icon-trash"></span>
+		</button>
+	<% end %>
+	</th>
+	<th class="itName"><%= @account.name %></th>
+	<th class="itPercentage"><%= @account.allocator.percentage %></th>
+	<th class="itEdit">
+	<%= link_to (edit_account_path(@account), :remote => true) do %>
+		<button class="ui-state-default ui-corner-all" title=".ui-icon-trash">
+		<span class="ui-icon ui-icon-comment"></span>
+		</button>
+	<% end %>
+	</th>
+	</tr>
+	<% i += 1 %>
+<% end %>
+</tbody>
+</table>

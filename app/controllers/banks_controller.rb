@@ -10,9 +10,9 @@ class BanksController < ApplicationController
   end
 
   def create
-    @bank = Bank.new(params[:bank])
+   @bank = Bank.new(params[:bank])
 
-	@bank.save
+	 @bank.save
   end
   
   def edit

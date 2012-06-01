@@ -29,5 +29,5 @@ Mmi::Application.configure do
   config.assets.debug = true
   
   # Do not preload assets
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 end
