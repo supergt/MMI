@@ -30,9 +30,7 @@ class AccountsController < ApplicationController
       @account.errors.add("Invalid percentage")
     end
 
-    respond_to do |format|
-      format.js
-    end
+    redirect_to root_path
   end
   
   def edit
@@ -47,8 +45,16 @@ class AccountsController < ApplicationController
   def update
     @account = Account.find(params[:id])
     @allocator = @account.allocator
-    @account.update_attributes(params[:account])
-    @allocator.update_attributes(:percentage => params[:percentage])
+
+    if params[:percentage] != ""
+      @account.update_attributes(params[:account])
+      @allocator.update_attributes(:percentage => params[:percentage])  
+    else
+      @account.errors.add("Invalid percentage")
+    end
+
+    redirect_to root_path
+    
   end
   
   def destroy
