@@ -7,12 +7,12 @@
   
   <div class="field">
     From
-    <%= collection_select (:transfer, :donor_id, Account.all, :id, :name)  %>
+    <%= f.collection_select :donor_id, Account.all, :id, :name  %>
   </div>
 
   <div class="field">
     To
-    <%= collection_select (:transfer, :recipient_id, Account.all, :id, :name)  %>
+    <%= f.collection_select :recipient_id, Account.all, :id, :name  %>
   </div>
 
   <div class="field">
