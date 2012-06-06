@@ -17,7 +17,7 @@
 		<tr class="itemRow odd">
 	<% end %>
 	<th class="itDelete">
-	<%= link_to (@account, :remote => true, :confirm => 'Are you sure?', :method => :delete) do %>
+	<%= link_to (@account), {:remote => true, :confirm => 'Are you sure?', :method => :delete} do %>
 		<button class="ui-state-default ui-corner-all" title=".ui-icon-trash">
 		<span class="ui-icon ui-icon-trash"></span>
 		</button>
@@ -26,7 +26,7 @@
 	<th class="itName"><%= @account.name %></th>
 	<th class="itPercentage"><%= @account.allocator.percentage %></th>
 	<th class="itEdit">
-	<%= link_to (edit_account_path(@account), :remote => true) do %>
+	<%= link_to (edit_account_path(@account)), {:remote => true} do %>
 		<button class="ui-state-default ui-corner-all" title=".ui-icon-trash">
 		<span class="ui-icon ui-icon-comment"></span>
 		</button>

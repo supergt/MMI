@@ -6,8 +6,6 @@ class ExpensesController < ApplicationController
 	
   def index
 
-    puts 'Index...'
-
     num_per_page = 5
 
     @expenses = Expense.find(:all, :include => [:account], :order => sort_column + " " + sort_direction).paginate(:per_page => num_per_page, :page => params[:expenses_page])

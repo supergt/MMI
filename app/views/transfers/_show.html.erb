@@ -16,7 +16,7 @@
 		<tr class="itemRow odd">
 	<% end %>
 	<th class="itDelete">
-	<%= link_to (@transfer, :remote => true, :confirm => 'Are you sure?', :method => :delete) do %>
+	<%= link_to (@transfer), {:remote => true, :confirm => 'Are you sure?', :method => :delete} do %>
 		<button class="ui-state-default ui-corner-all" title=".ui-icon-trash">
 		<span class="ui-icon ui-icon-trash"></span>
 		</button>
