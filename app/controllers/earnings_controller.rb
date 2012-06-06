@@ -2,6 +2,8 @@ class EarningsController < ApplicationController
 
   helper_method :sort_column, :sort_direction
 
+  require 'will_paginate/array'
+
 	def index
     num_per_page = 5
 
